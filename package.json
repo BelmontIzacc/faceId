@@ -4,8 +4,8 @@
   "description": "api para comparar la selfie y el id e indicar si son la misma persona",
   "main": "./faceid/index.js",
   "scripts": {
-    "start": "node ./proni/index.js",
-    "dev": "nodemon proni/index.js"
+    "start": "node ./faceid/index.js",
+    "dev": "nodemon faceid/index.js"
   },
   "author": "VMLL",
   "license": "ISC",
