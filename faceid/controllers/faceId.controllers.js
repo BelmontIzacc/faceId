@@ -38,7 +38,8 @@ faceIdCtrl.validarImagenes = async (urlId = '', urlsSelf = ['']) => {
                 });
             } else {
                 resultados.push({
-                    resultado: "Sin resultado",
+                    resultado: comparar,
+                    estatus:"Sin resultado",
                     url: url
                 });
             }
