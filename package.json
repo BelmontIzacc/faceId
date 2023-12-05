@@ -1,0 +1,27 @@
+{
+  "name": "faceid",
+  "version": "1.0.0",
+  "description": "api para comparar la selfie y el id e indicar si son la misma persona",
+  "main": "./faceid/index.js",
+  "scripts": {
+    "start": "node ./proni/index.js",
+    "dev": "nodemon proni/index.js"
+  },
+  "author": "VMLL",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.5.1",
+    "bcrypt-nodejs": "0.0.3",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "request-promise": "^4.2.6",
+    "request-promise-native": "^1.0.9",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
