@@ -74,4 +74,29 @@ kairosCtrl.verify = async (url = "", nombre = "") => {
     });
     return kairos;
 }
+
+/**
+ * @description Lista los rostros de la galeria IDue.
+ * mas información en : https://www.kairos.com/docs/api/#post-galleryview
+ * @returns status: '...', subject_ids: ['...']
+ */
+kairosCtrl.verGaleria = async () => {
+    const kairos = await requestPromise.post({
+        uri: '' + kairosUrl + '/gallery/view',
+        headers: headers,
+        body: {
+            gallery_name: '' + gallery
+        },
+        json: true
+    }).then(data => {
+        const listado = {
+            status: data.status,
+            subject_ids: data.subject_ids
+        }
+        return listado;
+    }).catch(err => {
+        return new StandarException("No hay galerias", codigos.validacionIncorrecta, err);
+    });
+    return kairos;
+}
 module.exports = kairosCtrl;

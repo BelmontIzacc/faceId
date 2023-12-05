@@ -31,10 +31,17 @@ faceIdCtrl.validarImagenes = async (urlId = '', urlsSelf = ['']) => {
         if (comparar instanceof StandarException) {
             
         } else {
-            resultados.push({
-                resultado: comparar.images[0].transaction.confidence,
-                url: url
-            });
+            if(comparar !== undefined && Object.keys(comparar).length > 0 && comparar.images){
+                resultados.push({
+                    resultado: comparar.images[0].transaction.confidence,
+                    url: url
+                });
+            } else {
+                resultados.push({
+                    resultado: "Sin resultado",
+                    url: url
+                });
+            }
         }
     }
 
@@ -42,6 +49,11 @@ faceIdCtrl.validarImagenes = async (urlId = '', urlsSelf = ['']) => {
         roll: cargarId,
         verify: resultados
     }
+}
+
+faceIdCtrl.galerias = async () => {
+    const galerias = await kairosCtrl.verGaleria();
+    return galerias
 }
 
 validarUrlArray = (urls = ['']) => {

@@ -23,5 +23,10 @@ router.post('/', faceId_dto.validarDto, async(req, res, next) => {
     res.json({ estatus: true, validar: resultado.verify});
 });
 
+router.get('/', async (req, res, next) => {
+    const galerias = await faceIdCtrl.galerias();
+    res.json({ estatus: true, galerias: galerias});
+})
+
 // export del modulo router
 module.exports = router;
